@@ -1,0 +1,14 @@
+.navbar {
+ border-bottom: 2px solid #ccc;
+}
+.navbar-inverse {
+    background-color: blue;
+    border-color: blue;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}

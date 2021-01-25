@@ -1,0 +1,257 @@
+<div class="container">
+  <div class="col-xs-12">
+    <h3 class="header"><i class="fa fa-edit"></i>Alterar dados Clientes</h3>
+  </div>
+</div>
+<div class="container register">
+  <div class="col-xs-12">
+    <form
+      class="form-horizontal"
+      #f="ngForm"
+      novalidate
+      (ngSubmit)="f.form.valid && onSubmit()"
+    >
+      <input
+        type="hidden"
+        class="form-control"
+        required
+        name="id"
+        [(ngModel)]="client.id"
+        value=""
+      />
+      <div class="row">
+        <div class="col-sm-5 form-group">
+          <label for="nome" class="required"> Nome </label>
+          <input
+            type="text"
+            class="form-control"
+            #firstNamevalid="ngModel"
+            required
+            name="firstName"
+            [(ngModel)]="client.firstName"
+            placeholder="First Name *"
+            value=""
+          />
+
+          <div
+            *ngIf="
+              firstNamevalid.errors &&
+              (firstNamevalid.dirty || firstNamevalid.touched)
+            "
+          >
+            <p class="text-danger" *ngIf="firstNamevalid.errors.required">
+              First Name is required
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="rg" class="required"> RG </label>
+          <input
+            type="text"
+            class="form-control"
+            #rgClientvalid="ngModel"
+            required
+            name="rgClient"
+            [(ngModel)]="client.rgClient"
+            placeholder="Digite o RG"
+            value=""
+            mask="separator.2"
+          />
+
+          <div
+            *ngIf="
+              rgClientvalid.errors &&
+              (rgClientvalid.dirty || rgClientvalid.touched)
+            "
+          >
+            <p class="text-danger" *ngIf="rgClientvalid.errors.required">
+              Informe o RG do cliente
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-3 form-group">
+          <label for="cpf" class="required"> CPF </label>
+          <input
+            type="text"
+            class="form-control"
+            #cpfvalid="ngModel"
+            required
+            name="cpf"
+            [(ngModel)]="client.cpf"
+            placeholder="Digite o CPF"
+            value=""
+            mask="000.000.000-00" 
+          />
+
+          <div *ngIf="cpfvalid.errors && (cpfvalid.dirty || cpfvalid.touched)">
+            <p class="text-danger" *ngIf="cpfvalid.errors.required">
+              Informe o CPF do cliente
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="datNascimento"> Data de Nascimento </label>
+          <input
+            type="text"
+            class="form-control"
+            #datNascimentovalid="ngModel"
+            name="datNascimento"
+            [(ngModel)]="client.datNascimento"
+            placeholder="Digite a data de nascimento"
+            value=""
+            mask="d0/M0/0000"
+          />
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="telefone"> Telefone </label>
+          <input
+            type="text"
+            class="form-control"
+            #telefonevalid="ngModel"
+            name="telefone"
+            [(ngModel)]="client.telefone"
+            placeholder="Digite o telefone"
+            value=""
+            prefix="+55" mask="(000) 00000-0000"
+          />
+        </div>
+
+        <div class="col-sm-5 form-group">
+          <label for="email" class="required"> E-mail </label>
+          <input
+            type="email"
+            class="form-control"
+            #emailvalid="ngModel"
+            required
+            name="email"
+            [(ngModel)]="client.email"
+            placeholder="Digite o E-mail"
+            value=""
+          />
+
+          <div
+            *ngIf="
+              emailvalid.errors && (emailvalid.dirty || emailvalid.touched)
+            "
+          >
+            <p class="text-danger" *ngIf="emailvalid.errors.required">
+              Informe o E-mail do cliente
+            </p>
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <label for="empresa"> Empresa </label>
+          <select
+            class="form-control"
+            id="empresa"
+            name="empresa"
+            [(ngModel)]="client.empresa"
+          >
+            <option selected>Selecione</option>
+            <option value="Carrefour">Carrefour</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="col-sm-5 form-group">
+          <label for="endereco"> Endereço </label>
+          <input
+            type="text"
+            class="form-control"
+            #enderecovalid="ngModel"
+            name="endereco"
+            [(ngModel)]="client.endereco"
+            placeholder="Digite o Endereço"
+            value=""
+          />
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="numero"> Numero </label>
+          <input
+            type="text"
+            class="form-control"
+            name="numero"
+            [(ngModel)]="client.numero"
+            placeholder="Digite o numero"
+            value=""
+          />
+        </div>
+
+        <div class="col-sm-4 form-group">
+          <label for="bairro"> Bairro </label>
+          <input
+            type="text"
+            class="form-control"
+            name="bairro"
+            [(ngModel)]="client.bairro"
+            placeholder="Digite o bairro"
+            value=""
+          />
+        </div>
+
+        <div class="col-sm-2 form-group">
+          <label for="cep"> CEP </label>
+          <input
+            type="text"
+            class="form-control"
+            name="cep"
+            [(ngModel)]="client.cep"
+            placeholder="Digite o CEP"
+            value=""
+            mask="00000-000"
+          />
+        </div>
+
+        <div class="col-sm-4 form-group">
+          <label for="complemento"> Complemento </label>
+          <input
+            type="text"
+            class="form-control"
+            name="complemento"
+            [(ngModel)]="client.complemento"
+            placeholder="Digite o complemento"
+            value=""
+          />
+        </div>
+
+        <div class="col-sm-3 form-group">
+          <label for="cidade"> Cidade </label>
+          <input
+            type="text"
+            class="form-control"
+            name="cidade"
+            [(ngModel)]="client.cidade"
+            placeholder="Digite o cidade"
+            value=""
+          />
+        </div>
+
+        <div class="col-sm-3">
+          <label for="estado"> Estado </label>
+          <select
+            class="form-control"
+            id="estado"
+            name="estado"
+            [(ngModel)]="client.estado"
+          >
+            <option selected>Selecione</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="SP">São Paulo</option>
+          </select>
+        </div>
+      </div>
+        <button (click)="onSubmit()" class="btn btn-success">
+          Atualizar
+        </button>
+        <a [routerLink]="['/buscar-de-clientes']" class="btn btn-danger"
+        >Cancelar</a
+      >
+    </form>
+  </div>
+</div>

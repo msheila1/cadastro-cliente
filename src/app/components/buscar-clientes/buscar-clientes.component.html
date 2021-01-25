@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="container">
+    <h3 class="search"><i class="fa fa-search"></i>Buscar Clientes</h3>
+    <div class="container form-group">
+      <input
+        type="text"
+        (keyup)="filtrarClientes()"
+        [(ngModel)]="query"
+        class="form-control"
+        placeholder="Filtrar pelo nome..."
+      />
+    </div>
+
+    <div class="row">
+      <ul *ngFor="let client of clients">
+        <div class="card col-sm">
+          <div class="card-body">
+            <h4 class="card-title">
+              <strong>Nome:</strong> {{ client.firstName }}
+            </h4>
+            <p class="card-text">
+              <strong>RG: </strong>{{ client.rgClient | mask: "separator.2" }}
+            </p>
+            <p class="card-text">
+              <strong>CPF: </strong>{{ client.cpf | mask: "000.000.000-00" }}
+            </p>
+            <p class="card-text"><strong>Empresa: </strong>{{ client.empresa }}</p>
+            <p class="card-text"><strong>E-mail: </strong>{{ client.email }}</p>
+            <a
+              [routerLink]="['/atualizacao-cadastral', client.id]"
+              class="btn btn-primary"
+              >Editar</a
+            >
+            <button (click)="deleteClients(client.id)" class="btn btn-danger">
+              Excluir
+            </button>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

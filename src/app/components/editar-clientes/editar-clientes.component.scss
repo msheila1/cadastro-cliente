@@ -1,0 +1,26 @@
+.header {
+    margin-top: 20px;
+    color: #1e5bc6;
+  }
+  
+  .fa {
+    margin-right: 10px;
+  }
+  
+  .register{
+    background: -webkit-linear-gradient(left, #c5c5c52e, #c5c5c52e);
+    margin-top: 1%;
+    padding: 3%;
+    border: 1px solid#cccccc;
+}
+
+.register .register-form{
+    padding: 6%;
+    margin-top: 10%;
+}
+
+
+.form-group .required:after {
+  content: "*";
+  color: red;
+}
