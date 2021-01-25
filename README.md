@@ -1,4 +1,4 @@
-# Angular---7- Cadastro de Clientes
+# Angular 7- Cadastro de Clientes
 This is REGISTER CLIENT application built using Angular-7 and localstorage
 
 Clone or download the repo
